@@ -11,7 +11,7 @@ export class TaskListComponent implements OnInit {
   constructor(private todoService:TodoService) { }
 
   ngOnInit(): void {
-    this.todoList.push(...this.todoService.getTodoData());
+    //this.todoService.addTodo({id:4,task:"New Task"});
+    this.todoList=this.todoService.getTodoData();
   }
-
 }
