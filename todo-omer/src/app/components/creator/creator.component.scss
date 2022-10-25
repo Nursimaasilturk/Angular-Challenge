@@ -1,0 +1,40 @@
+$background:#06283D;
+$secondary:#256D85;
+$primary:#47B5FF;
+.creator{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:25px 0;
+    input {
+        border:none;
+        color:#ededed;
+        background: $background;
+        width: 80%;
+        height: 50px;
+        font-size:2rem;
+        text-indent: 25px;
+        border-radius: 8px;
+    }
+    input:focus{
+        outline: none;
+    }
+    button{
+        height: 50px;
+        width: 250px;
+        border:none;
+        background:transparent;
+        border:2px solid $background;
+        color:$background;
+        border-radius: 5px;
+        margin-left:10px;
+        cursor: pointer;
+        font-weight: 800;
+    }
+    button:hover{
+        transition: 0.2s ease-in-out;
+        color:$primary;
+        background:$background;
+    }
+
+}
