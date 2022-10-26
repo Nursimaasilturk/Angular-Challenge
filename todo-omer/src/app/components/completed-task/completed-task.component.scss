@@ -1,0 +1,10 @@
+.completed-task{
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    background: greenyellow;
+    padding:25px;
+    font-weight: 900;
+    border-radius: 8px;
+}

@@ -7,7 +7,7 @@ import { TaskModel } from 'src/app/models/TaskModel';
   styleUrls: ['./task.component.scss']
 })
 export class TaskComponent implements OnInit {
-  @Input() task:TaskModel={id:-1,task:"UNDEFINED TASK EXECUTED"};
+  @Input() task:TaskModel={id:-1,task:"UNDEFINED TASK EXECUTED",status:"active"};
   constructor() { }
 
   ngOnInit(): void {

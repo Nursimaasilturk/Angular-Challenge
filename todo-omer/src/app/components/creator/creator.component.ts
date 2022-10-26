@@ -20,7 +20,8 @@ export class CreatorComponent implements OnInit {
   onCreate(){
     const newTask={
       id:this.todoService.getTodoData().length+1,
-      task:this.text
+      task:this.text,
+      status:"active",
     } as TaskModel;
     this.todoService.addTodo(newTask);
   }

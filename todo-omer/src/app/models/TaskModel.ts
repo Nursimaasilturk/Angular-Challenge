@@ -1,4 +1,5 @@
 export type TaskModel={
     id?:number,
-    task?:string
+    task?:string,
+    status?:'active'|'completed'|'deleted'
 };

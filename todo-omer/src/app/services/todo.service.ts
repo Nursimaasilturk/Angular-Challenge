@@ -11,10 +11,13 @@ export class TodoService {
   constructor() { }
   
   getTodoData():TaskListModel{
-    return apiData;
+     return apiData;
   }
 
+  
+
+  
   addTodo(newTodo:TaskModel){
-    this.getTodoData().push(newTodo);
+    apiData.push(newTodo);
   }
 }
