@@ -1,0 +1,25 @@
+
+
+<div class="todo_container">
+    <div class="todo_input">
+        <form>
+
+            <input type="text" name="title"  #taskInput>
+    
+            <button class="btn btn-info" type="submit" (click)="addTodo(taskInput.value)">Add</button>
+    
+        </form>
+    </div>
+
+    <div class="todos">
+
+        <div class="todo" *ngFor="let todo of todos, let id = index">
+            <div class="todo_title">
+                {{id + 1}}.{{todo.title}}
+            </div>
+            <div class="todo_btns">
+                <button class="btn btn-danger" (click)="deleteTodo(id)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
