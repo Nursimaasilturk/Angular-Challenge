@@ -19,16 +19,45 @@ export class TodoListComponent implements OnInit {
   
 
   addTodo(task:string){ 
-    this.todos.push(
-      {
-      title : task
-      }
-    );
+    if(task != null && task != ""){
+      this.todos.push(
+        {
+        title : task
+        }
+      );
+    }
     console.log(this.todos);
   }
 
 
   deleteTodo(id:number){
-    this.todos.splice(id, 1);
+    let isConfirm = confirm("Are you that you want to delete your task ?");
+    if(isConfirm) this.todos.splice(id, 1);
   }
+
+  completedTodo(id:number){
+    this.todos[id].is_completed = true;
+  }
+
+  unCompletedTodo(id:number){
+    this.todos[id].is_completed = false;
+  }
+
+  clearTodos():void {
+    let isConfirm = confirm("Are you that you want to clear your todo list ?");
+    if(isConfirm){
+      this.todos.splice(0);
+    }
+    
+  }
+
+  editTodo(id:number){
+    let currentTitle = this.todos[id].title;
+    let newTitle = prompt("Edit todo title", currentTitle);
+
+    if(newTitle != null && newTitle != ""){
+      this.todos[id].title = newTitle;
+    }
+  }
+
 }
