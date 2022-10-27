@@ -1,25 +1,75 @@
 
-
-<div class="todo_container">
-    <div class="todo_input">
-        <form>
-
-            <input type="text" name="title"  #taskInput>
-    
-            <button class="btn btn-info" type="submit" (click)="addTodo(taskInput.value)">Add</button>
-    
-        </form>
-    </div>
-
-    <div class="todos">
-
-        <div class="todo" *ngFor="let todo of todos, let id = index">
-            <div class="todo_title">
-                {{id + 1}}.{{todo.title}}
-            </div>
-            <div class="todo_btns">
-                <button class="btn btn-danger" (click)="deleteTodo(id)">Delete</button>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 todo_header">
+            <h1> To-Do Manir Application </h1>
         </div>
     </div>
+ </div> 
+<div class="container">
+
+    <div class="todos">
+        <div class="todo_input">
+            <div class="row">
+                <form action="">
+                    <div class="col-xs-8">
+                        <input type="text"  class="form-control" name="title"  #taskInput placeholder="Enter To-Do ....">
+                    </div>
+                 
+                    <div class="col-xs-4">
+                        <button class="btn btn-primary" type="submit" (click)="addTodo(taskInput.value)">Add Task</button>
+                    </div>
+                </form>
+             </div>
+        </div>
+    
+        <div class="todos_table">
+    
+        <div class="row">
+            <div class="col-xs-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>My ToDo list</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let todo of todos, let id = index">
+    
+                            <td *ngIf="todo.is_completed; else notCancel">
+                                <s>{{ id + 1 }}. {{todo.title}}</s>
+                            </td>
+                            <ng-template #notCancel>
+                                <td>
+                                    <h3>{{ id + 1 }}. {{todo.title}}</h3>
+                                </td>
+                            </ng-template>
+    
+                            <td>
+                                <button class="btn btn-warning" (click)="completedTodo(id)">Completed</button>
+                            </td>
+                            <td *ngIf="todo.is_completed">
+                                <button class="btn btn-success" (click)="unCompletedTodo(id)">UnCompleted</button>
+                            </td>
+
+                            <td>
+                                <button class="btn btn-primary" (click)="editTodo(id)">Edit</button>
+                            </td>
+                            
+                            <td>
+                                <button class="btn btn-danger" (click)="deleteTodo(id)">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr *ngIf="todos?.length">
+                            <button class="btn btn-danger" (click)="clearTodos()">Clear</button>    
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>
+   
 </div>
