@@ -14,9 +14,6 @@ export class TodoService {
      return apiData;
   }
 
-  
-
-  
   addTodo(newTodo:TaskModel){
     apiData.push(newTodo);
   }
