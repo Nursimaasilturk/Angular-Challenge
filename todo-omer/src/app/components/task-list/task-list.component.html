@@ -1,3 +1,18 @@
-<task *ngFor="let task of todoList" [task]="task"></task>
-
-<app-completed-task *ngFor="let cTask of cTodoList" [task]="cTask"></app-completed-task>
+<div *ngFor="let task of todoList">
+<div *ngIf="task.status=='active'" class="task">
+    <div class="text">
+       {{task.task}}
+    </div>
+    <div class="actions">
+        <button (click)="onClick(task.id)" class="completed"><i class="fa fa-check" aria-hidden="true"></i>
+        </button>
+        <button (click)="onDelete(task.id)" class="done"><i class="fa fa-trash" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>
+</div>
+<div *ngFor="let task of cTodoList"  >
+    <div *ngIf="task.status=='completed'" class="completed-task">
+        {{task.task}}
+    </div> 
+</div>
