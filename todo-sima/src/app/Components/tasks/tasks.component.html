@@ -1,4 +1,9 @@
-<h3>{{ title }}</h3>
+<div class="top-menu">
+  <h3>{{ title }}</h3>
+  <div class="tasks-scroll-bar">
+    <div class="ball"></div>
+  </div>
+</div>
 <div class="container">
   <div class="tasks-item" *ngFor="let item of task">
     <a

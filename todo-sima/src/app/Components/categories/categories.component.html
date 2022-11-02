@@ -8,7 +8,11 @@
     <div class="task-category">{{ item.name }}</div>
     <div class="task-progress-bar">
       <div class="progress-back"></div>
-      <div class="progress-part" [appColor]="item.color"></div>
+      <div
+        class="progress-part"
+        [appColor]="item.color"
+        [ngStyle]="{ width: getPercent(item.id) }"
+      ></div>
     </div>
   </div>
 </div>

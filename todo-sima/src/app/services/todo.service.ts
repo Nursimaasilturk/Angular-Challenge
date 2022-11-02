@@ -9,14 +9,8 @@ import { Task } from '../Models/task';
 export class TodoService {
   taskList: Task[] = [
     { type: 'Bussines', content: 'Hard Work.', category_id: 2, status: 'will' },
-    { type: 'Sport', content: 'Go to GYM', category_id: 3, status: 'will' },
-    { type: 'Home', content: 'Clean Home.', category_id: 1, status: 'will' },
-    {
-      type: 'Bussines',
-      content: 'Complete the obligations',
-      category_id: 2,
-      status: 'will',
-    },
+    { type: 'Sport', content: 'Go to GYM', category_id: 3, status: 'done' },
+    { type: 'Home', content: 'Clean Home.', category_id: 1, status: 'done' },
     {
       type: 'Bussines',
       content: 'Complete the obligations',
@@ -28,6 +22,18 @@ export class TodoService {
       content: 'Complete the obligations',
       category_id: 2,
       status: 'done',
+    },
+    {
+      type: 'Home',
+      content: 'Complete the obligations',
+      category_id: 1,
+      status: 'will',
+    },
+    {
+      type: 'Sport',
+      content: 'Complete the obligations',
+      category_id: 3,
+      status: 'will',
     },
   ];
   categoryList: Category[] = [
