@@ -1,0 +1,22 @@
+//Variables
+$first-color: #1e2f97;
+$second-color: #1aa7ec;
+$third-color: #4adede;
+$forth-color: #797ef6;
+$background-color: #b8e3ff;
+$font-family: "Quicksand", sans-serif;
+@mixin display($display, $align-items, $justify-content, $flex) {
+  display: $display;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  flex-direction: $flex;
+}
+
+app-table {
+  border-radius: 2rem;
+  width: 80%;
+  height: 90%;
+  background-color: $first-color;
+  @include display(flex, center, flex-start, column);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

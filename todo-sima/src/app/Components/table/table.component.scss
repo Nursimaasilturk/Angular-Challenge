@@ -1,0 +1,41 @@
+//Variables
+$first-color: #1e2f97;
+$second-color: #1aa7ec;
+$third-color: #4adede;
+$forth-color: #797ef6;
+$background-color: #b8e3ff;
+$font-family: "Quicksand", sans-serif;
+@mixin display($display, $align-items, $justify-content, $flex) {
+  display: $display;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  flex-direction: $flex;
+}
+h1 {
+  color: #b3ff;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+.content {
+  height: 90%;
+  width: 98%;
+  padding: 1rem;
+  @include display(flex, center, center, row);
+  .today-task {
+    width: 65%;
+    height: 100%;
+    app-tasks {
+      width: 100%;
+      @include display(flex, flex-start, flex-start, column);
+    }
+  }
+  .categories {
+    width: 30%;
+    height: 100%;
+    @include display(flex, center, flex-start, column);
+    app-categories {
+      width: 100%;
+      @include display(flex, center, flex-start, column);
+    }
+  }
+}

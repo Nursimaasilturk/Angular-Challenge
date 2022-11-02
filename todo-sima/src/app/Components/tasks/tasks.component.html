@@ -1,0 +1,29 @@
+<h3>{{ title }}</h3>
+<div class="container">
+  <div class="tasks-item" *ngFor="let item of task">
+    <a
+      class="task"
+      (click)="clickedOn($event, item)"
+      *ngIf="item.status == 'will'"
+    >
+      <div *ngFor="let c of cList">
+        <div
+          *ngIf="c.id == item.category_id"
+          class="task-box"
+          [appColor]="c.color"
+        >
+          <div class="inline-box"></div>
+          <i class="fa-solid fa-check"></i>
+        </div>
+      </div>
+      <div class="task-content">
+        {{ item.content }}
+      </div>
+    </a>
+  </div>
+</div>
+<div class="adding-button">
+  <button class="bubbly-button">
+    <i class="fa-solid fa-plus"></i>
+  </button>
+</div>

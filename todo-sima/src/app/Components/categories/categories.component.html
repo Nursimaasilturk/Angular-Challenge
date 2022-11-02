@@ -1,0 +1,14 @@
+<h3>{{ title }}</h3>
+<div class="category-items">
+  <div class="category" *ngFor="let item of category">
+    <div class="task-number">
+      {{ getCountOfCompletedTasks(item.id) }} /
+      {{ getCountOfTasks(item.id) }} Tasks
+    </div>
+    <div class="task-category">{{ item.name }}</div>
+    <div class="task-progress-bar">
+      <div class="progress-back"></div>
+      <div class="progress-part" [appColor]="item.color"></div>
+    </div>
+  </div>
+</div>
