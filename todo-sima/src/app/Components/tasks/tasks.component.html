@@ -1,15 +1,15 @@
 <div class="top-menu">
-  <h3>{{ title }}</h3>
-  <div class="tasks-scroll-bar">
-    <div class="ball"></div>
+  <h3>{{ isTrue ? title : secondTitle }}</h3>
+  <div class="tasks-scroll-bar" (click)="toggle()">
+    <div class="ball" [@openClose]="isOpen"></div>
   </div>
 </div>
 <div class="container">
   <div class="tasks-item" *ngFor="let item of task">
     <a
-      class="task"
+      class="task {{ item.status != 'will' && 'completed-task' }}"
       (click)="clickedOn($event, item)"
-      *ngIf="item.status == 'will'"
+      *ngIf="item.status == isOpen"
     >
       <div *ngFor="let c of cList">
         <div

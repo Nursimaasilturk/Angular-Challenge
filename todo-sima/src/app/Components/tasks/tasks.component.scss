@@ -14,12 +14,35 @@ $button-bg: #ff0081;
   flex-direction: $flex;
 }
 
-h3 {
-  color: #ededed;
-  font-weight: 300;
-  font-size: 1.5rem;
-  padding-left: 3rem;
-  margin-bottom: 1rem;
+.top-menu {
+  width: 100%;
+  @include display(flex, center, space-between, row);
+  h3 {
+    color: #ededed;
+    font-weight: 300;
+    font-size: 1.5rem;
+    padding-left: 3rem;
+    margin-bottom: 1rem;
+  }
+  .tasks-scroll-bar {
+    position: relative;
+    margin-right: 3rem;
+    width: 7vh;
+    height: 4vh;
+    border-radius: 1rem;
+    background-color: $third-color;
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    .ball {
+      position: absolute;
+      width: 4vh;
+      height: 3.8vh;
+      border-radius: 1rem;
+      background-color: #797ef6;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+  }
 }
 .container {
   width: 100%;
