@@ -8,7 +8,8 @@ import { TasksComponent } from './Components/tasks/tasks.component';
 import { CategoriesComponent } from './Components/categories/categories.component';
 import { ColorDirective } from './Directives/color.directive';
 import { CommonModule } from '@angular/common';
-import { AnimateComponent } from './animate/animate.component';
+import { AddingListComponent } from './Components/adding-list/adding-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,13 +18,15 @@ import { AnimateComponent } from './animate/animate.component';
     TasksComponent,
     CategoriesComponent,
     ColorDirective,
-    AnimateComponent,
+    AddingListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -19,13 +19,13 @@ import {
       state(
         'will',
         style({
-          left: '20px',
+          right: '20px',
         })
       ),
       state(
         'done',
         style({
-          right: '20px',
+          left: '20px',
         })
       ),
       transition('will => done', [animate('0.5s')]),
