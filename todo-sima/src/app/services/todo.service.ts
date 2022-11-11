@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { toArray } from 'rxjs';
+import { EventEmitter } from '@angular/core';
 import { Category } from '../Models/category';
 import { Task } from '../Models/task';
 
@@ -8,29 +9,25 @@ import { Task } from '../Models/task';
 })
 export class TodoService {
   taskList: Task[] = [
-    { type: 'Bussines', content: 'Hard Work.', category_id: 2, status: 'will' },
-    { type: 'Sport', content: 'Go to GYM', category_id: 3, status: 'done' },
-    { type: 'Home', content: 'Clean Home.', category_id: 1, status: 'done' },
+    { content: 'Hard Work.', category_id: 2, status: 'will' },
+    { content: 'Go to GYM', category_id: 3, status: 'done' },
+    { content: 'Clean Home.', category_id: 1, status: 'done' },
     {
-      type: 'Bussines',
       content: 'Complete the obligations',
       category_id: 2,
       status: 'will',
     },
     {
-      type: 'Bussines',
       content: 'Complete the obligations',
       category_id: 2,
       status: 'done',
     },
     {
-      type: 'Home',
       content: 'Complete the obligations',
       category_id: 1,
       status: 'will',
     },
     {
-      type: 'Sport',
       content: 'Complete the obligations',
       category_id: 3,
       status: 'will',
@@ -53,7 +50,12 @@ export class TodoService {
       color: '#4adede',
     },
   ];
+  taskNumber = new EventEmitter<number>();
   constructor() {}
+  addingTaskFunction(newTask: Task) {
+    this.taskList.push(newTask);
+    this.taskNumber.emit(this.taskList.length);
+  }
   getCountOfCompletedTasks(item: any): number {
     return this.taskList.filter(
       (i) => i.category_id == item && i.status == 'done'

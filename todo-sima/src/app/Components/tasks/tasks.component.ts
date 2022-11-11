@@ -37,11 +37,16 @@ export class TasksComponent implements OnInit {
   title = "Today's Task";
   secondTitle = 'Completed Task';
   value: boolean = false;
-  constructor(private todoService: TodoService, private el: ElementRef) {}
   task: Task[] = [];
   cList: Category[] = [];
   isOpen = 'will';
   isTrue: boolean = true;
+  taskNumber!: number;
+  constructor(private todoService: TodoService, private el: ElementRef) {
+    this.todoService.taskNumber.subscribe(
+      (count: number) => (this.taskNumber = count)
+    );
+  }
   clickedOn(event: any, item: Task) {
     event.target.closest('a').classList.add('completed-task');
     item.status = 'done';

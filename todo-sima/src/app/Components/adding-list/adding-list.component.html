@@ -1,25 +1,27 @@
 <div class="main-container">
   <div class="container adding-list-modal">
     <h4>Let's Do It !</h4>
-    <form class="adding-list-form">
+    <form [formGroup]="taskModal" class="adding-list-form">
       <label for="category">Category</label>
-      <select name="categories">
+      <select formControlName="id">
         <option value="Categories" selected>Categories</option>
-        <option
-          value="{{ item.name }}"
-          id="{{ item.id }}"
-          *ngFor="let item of categoryList"
-        >
+        <option [ngValue]="item.id" *ngFor="let item of categoryList">
           {{ item.name }}
         </option>
       </select>
       <label for="task">Task</label>
-      <textarea name="task" id="task" placeholder="Enter Your Task"></textarea>
+      <textarea
+        name="task"
+        id="task"
+        placeholder="Enter Your Task"
+        formControlName="task"
+      ></textarea>
       <div class="adding-list-form--button">
         <button
           routerLink="/"
           routerLinkActive="active"
           ariaCurrentWhenActive="page"
+          (click)="onSubmit()"
         >
           SEND
         </button>
